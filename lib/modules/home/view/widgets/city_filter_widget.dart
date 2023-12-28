@@ -28,7 +28,7 @@ class CityFilterWidget extends StatelessWidget {
         alignment: Alignment.center,
         padding: EdgeInsets.symmetric(horizontal: 5.w),
         decoration: BoxDecoration(
-          border: Border.all(),
+          border: Border.all(color: AppColor.activeColor),
           borderRadius: BorderRadius.circular(10.r),
           color:homeValue.selectedCityIndex==index?AppColor.activeColor:null
         ),

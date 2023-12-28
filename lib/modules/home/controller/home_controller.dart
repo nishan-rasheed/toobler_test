@@ -21,7 +21,7 @@ chooseCity(int v){
 List<EmployeeModel> employeeFullList = [];
 List<EmployeeModel> employeeFilterList = []; 
 
-List<String> employeeCityList = ['All'];
+List<String>? employeeCityList= ['All'];
 
 ApiResponse? apiResponse;
 
@@ -29,6 +29,7 @@ ApiResponse? apiResponse;
 getAllEmployees()async{
   apiResponse = ApiResponse(loading: true);
   notifyListeners();
+
   
   var response = await ApiService() .apiRequest(method: 'get');
 
@@ -38,16 +39,17 @@ getAllEmployees()async{
     employeeFullList = employeeModelFromJson(response?.body??'');
 
     for (var item in employeeFullList) {
-      employeeCityList.add(item.address?.city??'');
+      employeeCityList?.add(item.address?.city??'');
     }
-    employeeCityList = employeeCityList.toSet().toList();
+    employeeCityList = employeeCityList?.toSet().toList();
     employeeFilterList = employeeFullList;
 
     customPrint(json.encode(employeeCityList));
     notifyListeners();
   }
   else{
-    employeeCityList= [];
+  //  employeeCityList= [];
+   employeeFilterList = [];
     apiResponse = ApiResponse(loading: false);
     notifyListeners();
   }
