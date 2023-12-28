@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toobler_test/modules/home/view/screens/home_screen.dart';
 import 'package:toobler_test/utils/constants/app_colors.dart';
-import 'package:toobler_test/utils/constants/custom_print.dart';
 
 import '../../controller/home_controller.dart';
 
@@ -20,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(milliseconds: 1500),() {
      loadApi().whenComplete(() => 
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),)),
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  HomeScreen(),)),
       );
     } 
     );

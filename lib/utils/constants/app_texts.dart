@@ -1,1 +1,0 @@
- final String appName = 'Smart Save';

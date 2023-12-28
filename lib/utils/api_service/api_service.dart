@@ -62,7 +62,7 @@ class ApiService {
         return response;
       }
     } on SocketException {
-      CustomAlerts.customAlert('No internet,try again');
+      CustomAlerts.customAlert('Internet not connected');
       customLog('no internet');
     } catch (e) {
       CustomAlerts.customAlert('error: $e');
