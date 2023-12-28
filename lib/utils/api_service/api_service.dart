@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:toobler_test/widgets/custom_snackbar.dart';
 
 import '../constants/api_url.dart';
 import '../constants/custom_print.dart';
@@ -61,8 +62,10 @@ class ApiService {
         return response;
       }
     } on SocketException {
+      CustomAlerts.customAlert('No internet,try again');
       customLog('no internet');
     } catch (e) {
+      CustomAlerts.customAlert('error: $e');
       customLog('catch$e');
     }
     return null;

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toobler_test/modules/home/controller/home_controller.dart';
 import 'package:toobler_test/modules/home/view/screens/home_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:toobler_test/modules/home/view/screens/splash_screen.dart';
 import 'package:toobler_test/utils/constants/app_colors.dart';
 
 void main() async{
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => HomeController(),)
+        ChangeNotifierProvider(create: (context) => HomeController(),),
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
@@ -28,12 +29,13 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               scaffoldBackgroundColor: AppColor.cWhite,
               appBarTheme:const AppBarTheme(
-                backgroundColor: AppColor.appBarColor
+                backgroundColor: AppColor.appBarColor,
+                foregroundColor: AppColor.cWhite
               ),
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home:  HomeScreen(),
+            home: SplashScreen(),
           );
         }
       ),
