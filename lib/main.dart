@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toobler_test/modules/home/controller/home_controller.dart';
-import 'package:toobler_test/modules/home/view/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:toobler_test/modules/home/view/screens/splash_screen.dart';
 import 'package:toobler_test/utils/constants/app_colors.dart';
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: SplashScreen(),
+            home: const SplashScreen(),
           );
         }
       ),

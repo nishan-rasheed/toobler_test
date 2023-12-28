@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:toobler_test/modules/employee_detail/view/screens/employee_detail_screen.dart';
 import 'package:toobler_test/modules/home/controller/home_controller.dart';
-import 'package:toobler_test/modules/home/model/employee_model.dart';
 import 'package:toobler_test/modules/home/view/widgets/employee_widget.dart';
-import 'package:toobler_test/utils/constants/app_colors.dart';
 import 'package:toobler_test/utils/constants/app_textstyle.dart';
 import 'package:toobler_test/utils/constants/custom_print.dart';
 import 'package:toobler_test/widgets/common_text.dart';
@@ -14,7 +11,7 @@ import 'package:toobler_test/widgets/common_text.dart';
 import '../widgets/city_filter_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-   HomeScreen({Key? key}) : super(key: key);
+   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
